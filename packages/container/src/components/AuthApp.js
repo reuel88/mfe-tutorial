@@ -1,6 +1,6 @@
 import React, {useRef, useEffect} from "react";
-import {mount} from "marketing/MarketingApp";
 import {useHistory} from "react-router-dom";
+import {mount} from "auth/AuthApp";
 
 export default () => {
     const ref = useRef(null);
@@ -13,7 +13,7 @@ export default () => {
                 const {pathname} = history.location;
 
                 if (pathname !== nextPathname) history.push(nextPathname);
-            }
+            },
         });
 
         history.listen(onParentNavigate);
